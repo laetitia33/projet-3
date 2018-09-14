@@ -1,0 +1,836 @@
+
+
+#blocpage {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+/*----------------------header-----------------------*/
+
+#logo {
+    position: relative;
+    margin-left: 80px;
+}
+
+nav {
+    position: relative;
+    margin: auto;
+    color: rgb(30, 56, 56);
+}
+
+/* Titre du site*/
+
+h1 {
+    margin-right: 250px;
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 35px;
+    animation: anim 2s ease;
+}
+
+/*animation du titre au demarrage*/
+
+@-webkit-keyframes anim {
+    0% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+header p {
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 25px;
+    color: rgb(30, 56, 56);
+}
+
+header {
+    display: flex;
+    display: -ms-flexbox;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(251, 146, 135) , rgb(255, 184, 114) );/*dégradé header*/
+    background-image: -moz-linear-gradient(rgb(251, 146, 135) , rgb(255, 184, 114) );
+    background-image: -webkit-linear-gradient(rgb(251, 146, 135) , rgb(255, 184, 114) );
+    background-image: -o-linear-gradient(rgb(251, 146, 135) , rgb(255, 184, 114) );
+    -ms-flex-pack: justify;
+    -o-border-radius: 10px;
+}
+
+/*bouton utilisation en haut à droite*/
+
+#utilisation {
+    position: relative;
+    height: 250px;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 20px;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+#utilisation input {
+    display: none;
+}
+
+/*------------------------section 1 ------diaporama-----------*/
+
+#slideshow {
+    z-index: 4;
+    position: fixed;
+    top: 190px;
+    left: calc(100%/4);
+    width: 50%;
+    height: 550px;
+    margin: auto;
+    border: 10px solid white;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    background-image: linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -moz-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -webkit-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -o-linear-gradient(rgb(86, 165, 180) , #999);
+    -webkit-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    -moz-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    animation: anima 1s ease;
+    -o-border-radius: 14px;
+    -o-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+}
+
+@-webkit-keyframes anima {
+    0% {
+        transform: translateY(-250px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes anima {
+    0% {
+        transform: translateY(-250px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#slides {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    width: 400%;
+    margin: auto;
+    -ms-flex-pack: center;
+}
+
+#page1,
+#page2,
+#page3,
+#page4 {
+    width: 25%;
+    margin-right: 3%;
+    text-align: center;
+    font-size: 22px;
+    vertical-align: center;
+    list-style-type: none;
+    color: rgb(30, 56, 56);
+}
+
+h2 {
+    text-align: center;
+}
+
+.nxt {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.pre {
+    position: absolute;
+    top: 50%;
+}
+
+/* fleches de gauche et fleche de droite dans le slider*/
+
+button {
+    position: absolute;
+    color: white;
+    background-color: rgb(86, 165, 180);
+    -webkit-box-shadow: 2px 4px 4px 2px;
+    -moz-box-shadow: 2px 4px 4px 2px;
+    box-shadow: 2px 4px 4px 2px;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+    -o-box-shadow: 2px 4px 4px 2px;
+}
+
+button:hover {
+    color: rgb(106, 194, 110);
+    background-color: rgb(255, 184, 114);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: background-color 0.5s ease;
+    -o-box-shadow: none;
+}
+
+/* marqueurs explicatifs des stations dans le slidere page 1*/
+
+#stationlogo {
+    display: flex;
+    display: -ms-flexbox;
+    margin-bottom: 10px;
+    max-width: 100%;
+    font-size: 12px;
+}
+
+#stationlogo p {
+    width: 100%;
+    margin: auto;
+}
+
+.valider {
+    top: 25px;
+    color: green;
+}
+
+/* croix pour fermer le slider*/
+
+#ferme {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 24px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'acme',verdana,times new roman;
+    color: white;
+    background: rgb(86, 165, 180);
+    -webkit-box-shadow: 2px 3px 3px 2px#000;
+    -moz-box-shadow: 2px 3px 3px 2px #000;
+    box-shadow: 2px 3px 3px 2px #000;
+    -o-box-shadow: 2px 3px 3px 2px #000;
+}
+
+#ferme:hover {
+    color: rgb(106, 194, 110);
+    background-color: rgb(251, 146, 135);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: color 0.5s ease;
+    -o-box-shadow: none;
+}
+
+/*--------------------------map--------------------------------*/
+
+#map {
+    top: 25px;
+    left: 0;
+    width: 99%;
+    height: 780px;
+    margin: auto;
+    margin-top: 25px;
+    border: 2px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*  ----- Formulaire de location -----*/
+
+#formulaire {
+    display: flex;
+    display: -ms-flexbox;
+    z-index: 4;
+    position: fixed;
+    top: 250px;
+    left: -100%; /*le faire apparaitre par la gauche*/
+    flex-direction: column;
+    width: 22%;
+    height: auto;
+    border: 10px solid white;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    text-align: center;
+    background-image: linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -moz-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -webkit-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -o-linear-gradient(rgb(86, 165, 180) , #999);
+    -webkit-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    -moz-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    transition: 1s all;
+    -ms-flex-direction: column;
+    -o-border-radius: 14px;
+    -o-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+}
+
+#formulaire p {
+    top: 30%;
+}
+
+/* croix pour fermer le formulaire de location*/
+
+#fermeform {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'acme',verdana,times new roman;
+    color: white;
+    background: rgb(86, 165, 180);
+    -webkit-box-shadow: 2px 3px 3px 2px#000;
+    -moz-box-shadow: 2px 3px 3px 2px #000;
+    box-shadow: 2px 3px 3px 2px #000;
+    -o-box-shadow: 2px 3px 3px 2px #000;
+}
+
+#fermeform:hover {
+    color: rgb(106, 194, 110);
+    background-color: rgb(251, 146, 135);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: color 0.5s ease;
+    -o-box-shadow: none;
+}
+
+#status {
+    font-size: 22px;
+}
+
+/*---------bouton "reserver" puis bouton annuler lorsque le timer commence et le changement de design au survol*/
+
+#reserve,
+#stopReservation {
+    bottom: 25%;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 20px;
+    color: rgb(30, 56, 56);
+    background-image: linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -moz-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -webkit-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -o-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    -webkit-box-shadow: 2px 4px 4px 2px;
+    -moz-box-shadow: 2px 4px 4px 2px;
+    box-shadow: 2px 4px 4px 2px;
+    cursor: pointer;
+    -o-border-radius: 10px;
+    -o-box-shadow: 2px 4px 4px 2px;
+}
+
+#notreserv {
+    display: none;
+    padding: 7px;
+    color: grey;
+    background: silver;
+}
+
+a {
+    text-decoration: none;
+}
+
+#reserve:hover,
+#stopReservation:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(86, 165, 180);
+    box-shadow: none;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/*-------------------------formulaire canvas------------------*/
+
+#formcan {
+    display: flex;
+    display: none;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );/*dégradé footer*/
+    background-image: -moz-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -webkit-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -o-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    -webkit-box-shadow: 2px 4px 4px 2px;
+    -moz-box-shadow: 2px 4px 4px 2px;
+    box-shadow: 2px 4px 4px 2px;
+    -ms-display: flex;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    -o-border-radius: 10px;
+    -o-box-shadow: 2px 4px 4px 2px;
+}
+
+/* cases nom et prenom du formulaire*/
+
+#formcan input {
+    margin-top: 15px;
+}
+
+/* espace spécifique pour la signature*/
+
+#canvas {
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: lightgray;
+    box-shadow: inset 2px 2px 5px 1px;
+    cursor: pointer;
+}
+
+#formcan p {
+    display: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
+
+/*boutons annuler, effacer, reserver et changement au survol*/
+
+#stopsignature,
+#reservecan,
+#annulation {
+    display: inline-block;
+    height: auto;
+    margin-top: 5px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    padding: 7px;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 17px;
+    color: rgb(30, 56, 56);
+    background-image: linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -moz-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -webkit-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -o-linear-gradient(rgb(86, 165, 180) , #999);
+    -webkit-box-shadow: 2px 4px 4px 2px;
+    -moz-box-shadow: 2px 4px 4px 2px;
+    box-shadow: 2px 4px 4px 2px;
+    cursor: pointer;
+    -o-border-radius: 10px;
+    -o-box-shadow: 2px 4px 4px 2px;
+}
+
+#stopsignature:hover,
+#reservecan:hover,
+#annulation:hover {
+    color: white;
+    background-color: rgb(86, 165, 180);
+    box-shadow: none;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/*changement de la position du bouton annuler dans le formulaire du canvas. son design a été fait de la même façon
+que le bouton "réserver un velo cité plus haut*/
+
+.annulation {
+    clear: both;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 14px;
+}
+
+/*-------------------------reservation timer------------------------*/
+
+#reservation {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    width: 99.5%;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border: 5px solid white;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    font-size: 20px;
+    color: rgb(30, 56, 56);
+    background-image: linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -moz-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -webkit-linear-gradient(rgb(86, 165, 180) , #999);
+    background-image: -o-linear-gradient(rgb(86, 165, 180) , #999);
+    -webkit-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    -moz-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+    -ms-flex-pack: justify;
+    -o-border-radius: 14px;
+    -o-box-shadow: 0 0 10px 4px rgb(86, 165, 180);
+}
+
+/*--changement de la position du bouton sans retoucher son design---*/
+
+#stopReservation {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 7px;
+}
+
+/*-----------------message avertissement ----------------------------*/
+
+.inforeservationclass,
+.timer {
+    color: red;
+}
+
+#infosreservation /*masque les informations de reservation*/
+
+{
+    display: none;
+}
+
+/*-------------------------footer----------------------------------*/
+
+footer {
+    display: flex;
+    display: -ms-flexbox;
+    bottom: 0;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-family: 'acme',verdana,times new roman;
+    color: rgb(30, 56, 56);
+    background-image: linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );/*dégradé footer*/
+    background-image: -moz-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -webkit-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -o-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    -ms-flex-pack: justify;
+    -o-border-radius: 10px;
+}
+
+/* titre mentions légales à droite du footer*/
+
+#mentions {
+    margin-left: 70%;
+    text-decoration: none;
+    color: rgb(30, 56, 56);
+    cursor: pointer;
+}
+
+#mentions:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* div des mentions légales */
+
+#mentionsbloc {
+    display: none;
+    z-index: 5;
+    position: fixed;
+    top: 185px;
+    width: 70%;
+    height: 600px;
+    margin: auto;
+    border: 1px solid rgb(86, 165, 180);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -moz-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -webkit-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    background-image: -o-linear-gradient(rgb(255, 184, 114) , rgb(251, 146, 135) );
+    -o-border-radius: 10px;
+}
+
+/*fermeture des mentions légales*/
+
+#fermem {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 24px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'acme',verdana,times new roman;
+    color: white;
+    background: rgb(86, 165, 180);
+    -webkit-box-shadow: 2px 3px 3px 2px#000;
+    -moz-box-shadow: 2px 3px 3px 2px #000;
+    box-shadow: 2px 3px 3px 2px #000;
+    -o-box-shadow: 2px 3px 3px 2px #000;
+}
+
+#fermem:hover {
+    color: rgb(106, 194, 110);
+    background-color: rgb(251, 146, 135);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    transition: color 0.5s ease;
+    -o-box-shadow: none;
+}
+
+/* titre h2 mais avec specificités du bloc mentions légales donc un id a été ajouté*/
+
+#titrementions {
+    width: 100%;
+    height: 35px;
+    margin-top: 0;
+    padding-top: 15px;
+    text-align: center;
+    font-family: 'acme',verdana,times new roman;
+    color: rgb(30, 56, 56);
+    background-color: rgb(86, 165, 180);
+    -webkit-box-shadow: 2px 3px 3px 2px#000;
+    -moz-box-shadow: 2px 3px 3px 2px #000;
+    box-shadow: 2px 3px 3px 2px #000;
+    -o-box-shadow: 2px 3px 3px 2px #000;
+}
+
+/*titre des chapitres*/
+
+h3 {
+    margin-left: 2%;
+    text-decoration: underline;
+    font-family: 'acme',verdana,times new roman;
+    font-weight: bold;
+    color: rgb(30, 56, 56);
+}
+
+p {
+    margin-left: 2%;
+    font-family: 'acme',verdana,times new roman;
+    color: rgb(30, 56, 56);
+}
+
+@media screen and (max-width:1100px) {
+    #slideshow {
+        position: relative;
+        top: 25px;
+        left: 0;
+        width: 95%;
+        margin: auto;
+    }
+
+    #formulaire {
+        top: 0;
+        width: 50%;
+    }
+
+    #formcan {
+        width: 100%;
+    }
+
+    .ferme {
+        display: none;
+    }
+
+    .utilisation {
+        display: none;
+    }
+}
+
+@media screen and (max-width:850px) {
+    #blocpage {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+
+    #logo {
+        margin: auto;
+    }
+
+    h1 {
+        margin: auto;
+        font-size: 25px;
+        animation: none;
+    }
+
+    h1 p {
+        font-size: 12px;
+    }
+
+    header {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+
+    #mentions,
+    h4 {
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    #mentionsbloc {
+        z-index: 9999;
+        right: 10%;
+        left: 10%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:650px) {
+    #slides p {
+        font-size: 20px;
+    }
+
+    #stationlogo p {
+        width: 100%;
+        margin: auto;
+        font-size: 12px;
+    }
+}
+
+@media(orientation:landscape) and (max-device-width:850px) {
+    #mentionsbloc {
+        position: relative;
+        top: 5px;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+/*pour iphone 5 en mode paysage*/
+
+@media only screen and (orientation:landscape) and (max-device-width:568px){
+  
+    .image {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:590px) {
+    #page1 p page2 p,
+    page3 p,
+    page4 p {
+        margin-right: 8%;
+        font-size: 17px;
+    }
+
+    .image {
+        width: 70%;
+        margin-right: 4%;
+    }
+
+    #mentionsbloc {
+        top: 10px;
+        font-size: 15px;
+    }
+
+    #formulaire p,
+    #reserve {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .image {
+        margin-right: 8%;
+    }
+
+    #page1 p,
+    #page2 p,
+    #page3 p,
+    #page4 p,
+    h2 {
+        margin-right: 9%;
+    }
+
+    #mentionsbloc {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .image {
+        margin-right: 13%;
+    }
+
+    #page1 p,
+    #page2 p,
+    #page3 p,
+    #page4 p,
+    h2 {
+        margin-right: 15%;
+    }
+
+    #formcan input {
+        margin-left: 25%;
+    }
+
+    #canvas {
+        width: 80%;
+    }
+}

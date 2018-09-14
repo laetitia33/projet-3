@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="En un simple clique . Réservez votre vélo dans n'importe quelle station dans la ville de Lyon.Tout en simplicité.venez visiter!">
+        <meta name="viewport" content="width=device-width initial-scale=1">
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+        <meta property="og:url" content="https://velovelib.000webhostapp.com/"/>
+        <meta property="og:title" content="Velo'v location de vélos dans la ville de Lyon."/>
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="images/logo.png">
+        <meta name="Language" CONTENT="fr" />
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="icon" href="images/logo1.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+        <title>Velo'v location de vélos dans la ville de Lyon.</title>
+    </head>
+    <body >
+        <div id="blocpage">
+            <!--en-tête avec bouton pour acceder au <slider-->
+            <header>
+                <div id="logo">
+                    <img src="images/logo.png" alt="logo velib">
+                </div>
+                <nav>
+                    <h1>Bienvenue sur Velo'v.</h1>
+                    <p>Service de location de vélos à Lyon.</p>
+                </nav>
+                <button id="utilisation">Pour en savoir plus<br>
+                <i class="fas fa-bicycle"></i><br>Cliquez ici</button>
+            </header>
+            <!--slider-->
+            <section>
+                <div id="slideshow" >
+                    <a href="#ferme" title="fermer" id="ferme">X</a>
+                    <ul id="slides">
+                        <li id="page1">
+                            <h2>Etape 1</h2>
+                            <p>Pour réserver un vélo, veuillez cliquer sur le marqueur correspondant à l'adresse souhaitée.le marqueur actif est vert.
+                            </p>
+                            <img src="images/texte1.jpg" alt="explications location" class="image">
+                            <div id="stationlogo">
+                                <p ><img src="images/green.png" alt="stations ouvertes"> : Stations ouvertes</p>
+                                <p><img src="images/orange.png" alt= "reste peu de velos"> : Vélos indisponibles</p>
+                                <p ><img src="images/red.png" alt="stations fermées"> : Stations fermées</p>
+                            </div>
+                        </li>
+                        <li id="page2">
+                            <h2>Etape 2</h2>
+                            <p>Cliquez sur le bouton : réserver un vélo.Une fois la sélection effectuée une fenêtre , en bas de la page, s'ouvrira</p>
+                            <img src="images/texte2.jpg" alt="explication validation" class="image">
+                        </li>
+                        <li id="page3">
+                            <h2>Etape 3</h2>
+                            <p>Veuillez signer dans l'espace pour valider votre réservation.Puis cliquez sur réserver.Vous pouvez changer d'avis à tout moment.</p>
+                            <img src="images/texte3.jpg" alt="explication validation" class="image">
+                        </li>
+                        <li id="page4">
+                            <h2>Etape 4</h2>
+                            <p>Votre réservation est effectuée.Un message de confirmation s'affiche en bas de cette page  vous expliquant que le vélo est réservé durant les 20 prochaines minutes. vous avez la possibilité d'annuler .</p>
+                            <div class="valider"><i class="fas fa-check fa-2x"></i></div>
+                            <img src="images/texte4.jpg" alt="explication validation" class="image">
+                        </li>
+                    </ul>
+                    <button class="pre"><i class="fas fa-angle-left fa-3x"></i></button>
+                    <button class="nxt"><i class="fas fa-angle-right fa-3x"></i></button>
+                </div>
+            </section>
+            <!--map-->
+            <div id="map"></div>
+           
+            <!--formulaire de renseignements des marqueurs-->
+            <div id="formulaire">
+                <div id="form">
+                    <a href="#fermeform" title="fermer" id="fermeform">X</a>
+                    <p> Station : <span id ="station"></span></p>
+                    <p>Adresse : <span id ="address"></span></p>
+                    <p>Vélos disponibles : <span id="nb-velo"></span></p>
+                    <p>Places disponibles: <span id="nb-place"></span></p>
+                    <p><span id="status" ></span></p>
+                    <a href="#formcan">
+                        <div id="reserve">Réserver un vélo</div>
+                    </a>
+                    <div id="notreserv">Réservation indisponible</div>
+                </div>
+            </div>
+            <!--formulaire canvas avec renseignements nom, prénom-->
+            <section id ="formcan" >
+                <div id ="nomprenom">
+                    <input type ="text" id ="nom" placeholder ="Votre nom" >
+                    <input type =text id ="prenom" placeholder ="Votre prénom" >
+                </div>
+                <h3>Votre signature :</h3>
+                <canvas id ="canvas" >
+                    <p>Désolé, votre navigateur ne supporte pas Canvas. Mettez-vous à jour</p>
+                </canvas>
+                <p  id="messagefermeture">Veuillez renseigner tous les champs si vous souhaitez réserver un vélo</p>
+                <div class="canvasbut">
+                    <div id="stopsignature">Effacer</div>
+                    <div id= "reservecan" >réserver</div>
+                </div>
+                <a href= "#map">
+                    <div id="annulation">Annuler</div>
+                </a>
+            </section>
+            <div id ="reservation">
+                <div id ="infosreservation" class ="inforeservationclass">
+                    <p>Nom de la réservation : <span class="nomReservation"></span></p>
+                    <p>Nom de la station : <span class="stationReservation"></span></p>
+                    <p>Adresse de la station : <span class="addressReservation"></span></p>
+                    <p>Il vous reste : <span class="timerReservation"></span>  avant l'expiration de votre réservation.</p>
+                    <span id="stopReservation">Annuler la réservation en cours</span>
+                </div>
+                <p class="noreservation"><i class="fas fa-exclamation-circle"></i>&nbsp;Aucune réservation en cours</p>
+            </div>
+            <!--Mentions légales-->
+            <footer>
+                <h4>&copy; 2018 Velo'v tous droits réservés<br></h4>
+                <p id="mentions">Mentions légales
+                <p>
+                <div id="mentionsbloc">
+                    <a href="#ferme" title="fermer" id="fermem">X</a>
+                    <h2 id= "titrementions">Mentions légales</h2>
+                    <h3>Edition du site</h3>
+                    <P> Editeur du site https://velovelib.000webhostapp.com/: Madame laetitia bernardi Adresse : 24 rue henri dheurle, 33260 la teste de buch</p>
+                    <h3>Propriété Intellectuelle</h3>
+                    <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris les représentations iconographiques et photographiques. La reproduction, adaptation et/ou traduction de tout ou partie de ce site sur un support quel qu'il soit, est formellement interdite sauf autorisation expresse du Directeur de la publication.</p>
+                    <h3>Modification du site</h3>
+                    <p>L'équipe éditoriale se réserve le droit de modifier ou de corriger le contenu de ce site et de ces mentions légales à tout moment et ceci sans préavis.</p>
+                    <h3>Hébergeur</h3>
+                    <p>Le site https://velovelib.000webhostapp.com/</p>
+                </div>
+            </footer>
+            <!--dossiers javascript-->            		
+            <script src="js/ajax.js"></script>
+            <script src="js/slider.js"></script>
+            <script src="js/reservation.js"></script>
+            <script src="js/mentionslegales.js"></script>  
+            <script src="js/map.js"></script>
+            <script src="js/canvas.js"></script>     
+            <script src="js/timer.js"></script>
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRlSjJatmEaZaH9syjuzT9_zyVkzU9sDw&callback=initMap"></script>
+            <script src="js/markerclusterer.js"></script>
+        </div>
+    </body>
+</html>
